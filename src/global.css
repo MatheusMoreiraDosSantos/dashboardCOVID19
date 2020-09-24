@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    box-sizing: border-box;
+    background-color: transparent;
+  }
+  body {
+    font-family: 'Roboto', sans-serif;
+    background: #222222;
+    -webkit-font-smoothing: antialiased;
+  }
+  input,
+  button,
+  textarea {
+    font-family: 'Roboto', sans-serif;
+  }
+  button {
+    cursor: pointer;
+  }
+  ::-webkit-scrollbar {
+    display: none
+  }
+  :root {
+    --primary: #222222;
+    --secondary: #292929;
+    --white: #d9d9d9;
+    --gray: #666;
+    --outline: #2f3336;
+    --retweet: #00c06b;
+    --like: #e8265e;
+}
