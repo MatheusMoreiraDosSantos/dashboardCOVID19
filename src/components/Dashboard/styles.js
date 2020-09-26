@@ -49,6 +49,7 @@ export const ContainerSearch = styled.div`
     margin-left: auto;
     margin-right: auto;
 `;
+
 export const ButtonSearch = styled.button`
     border: 0;
     border-radius: 4px;
@@ -81,5 +82,8 @@ export const ContainerResultSearch = styled.div`
             font-size: 24px;
         }
     }
+`;
 
+export const ContainerChart = styled.div`
+    
 `;

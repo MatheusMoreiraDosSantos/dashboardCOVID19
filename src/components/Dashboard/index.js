@@ -1,5 +1,8 @@
 import React, {useState, useEffect, useCallback} from 'react';
 
+// chart google
+import Chart from "react-google-charts";
+
 // components search from material-ul
 import TextField from '@material-ui/core/TextField';
 import Autocomplete from '@material-ui/lab/Autocomplete';
@@ -17,7 +20,8 @@ import {
      ContainerInfos,
      ContainerSearch,
      ButtonSearch,
-     ContainerResultSearch
+     ContainerResultSearch,
+     ContainerChart
  } from './styles';
 
 function Dashboard() {
@@ -61,7 +65,7 @@ function Dashboard() {
     async function HandleSearch(){
         const response = await 
             api.get(`dayone/country/${country}/status/confirmed`);
-        setResultSearch(response.data[response.data.length-1])
+        setResultSearch(response.data[response.data.length-1]);
     }
 
     useEffect(()=>{
@@ -144,6 +148,38 @@ function Dashboard() {
                             <span>{resultSearch.Date}</span>
                             </h4>
                         </ContainerResultSearch>
+                        <ContainerChart>
+                        <Chart
+                            width={'600px'}
+                            height={'400px'}
+                            chartType="LineChart"
+                            loader={<div>Loading Chart</div>}
+                            data={[
+                                ['x', 'dogs'],
+                                [0, 0],
+                                [1, 10],
+                                [2, 23],
+                                [3, 17],
+                                [4, 18],
+                                [5, 9],
+                                [6, 11],
+                                [7, 27],
+                                [8, 33],
+                                [9, 40],
+                                [10, 32],
+                                [11, 35],
+                            ]}
+                            options={{
+                                hAxis: {
+                                title: 'Time',
+                                },
+                                vAxis: {
+                                title: 'Popularity',
+                                },
+                            }}
+                            rootProps={{ 'data-testid': '1' }}
+                            />
+                        </ContainerChart>
                     </>
                 ) : (<></>)
             }

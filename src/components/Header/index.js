@@ -9,7 +9,7 @@ function Header() {
   return (
     <Container>
       <h2>DADOS COVID 19 <span> atualizados diariamente</span> </h2>
-      <Button>De onde esses dados vem?</Button>
+      <Button to='/aboult' >De onde esses dados vem?</Button>
     </Container>
   );
 }
