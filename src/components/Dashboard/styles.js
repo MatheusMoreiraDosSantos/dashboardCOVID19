@@ -69,7 +69,7 @@ export const ContainerResultSearch = styled.div`
     padding: 15px;
     border-radius: 5px;
     display: flex;
-    margin-top: 30px;
+    margin-top: 5px;
     width: 100%;
     justify-content: space-between;
     color: var(--white);
@@ -85,5 +85,8 @@ export const ContainerResultSearch = styled.div`
 `;
 
 export const ContainerChart = styled.div`
-    
+    width: 100%;
+    background: var(--white);
+    display:flex;
+    justify-content: center;
 `;

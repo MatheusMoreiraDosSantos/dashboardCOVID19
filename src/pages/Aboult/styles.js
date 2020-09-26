@@ -35,7 +35,7 @@ export const Container = styled.div`
   }
 `;
 
-export const LinkDoc = styled(Link)`
+export const LinkDoc = styled.a`
     text-decoration: none;
     margin-top: 25px;
     color: var(--white);

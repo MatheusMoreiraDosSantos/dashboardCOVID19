@@ -9,6 +9,7 @@ export const Container = styled.div`
   flex-direction: row;
   justify-content: space-between;
   top: 0;
+  margin-bottom: 10px;
   padding: 15px;
   background: var(--secondary);
   color: var(--like);

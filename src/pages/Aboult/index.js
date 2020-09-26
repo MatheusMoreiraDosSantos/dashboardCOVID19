@@ -32,7 +32,7 @@ function Aboult() {
                 assistência que pudermos nessa área.
               </p>
             <img src={covid} alt='covid' />
-            <LinkDoc to='https://covid-19-apis.postman.com' >Documentação da API utilizada por esse sistema</LinkDoc>
+            <LinkDoc href='https://covid-19-apis.postman.com' >Documentação da API utilizada por esse sistema</LinkDoc>
           </div>
       </Container>
   );

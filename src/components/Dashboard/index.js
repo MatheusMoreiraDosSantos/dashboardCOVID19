@@ -1,5 +1,8 @@
 import React, {useState, useEffect, useCallback} from 'react';
 
+// format date 
+import formatDate from '../../utils/formatDate';
+
 // chart google
 import Chart from "react-google-charts";
 
@@ -39,6 +42,11 @@ function Dashboard() {
     const[country, setCountry] = useState([]);
     // result search
     const[resultSearch, setResultSearch] = useState();
+    const[day1, setDay1] = useState();
+    const[day2, setDay2] = useState();
+    const[day3, setDay3] = useState();
+    const[day4, setDay4] = useState();
+    const[day5, setDay5] = useState();
 
     
     const[loaded, setLoaded] = useState();
@@ -65,6 +73,13 @@ function Dashboard() {
     async function HandleSearch(){
         const response = await 
             api.get(`dayone/country/${country}/status/confirmed`);
+        setDay1(response.data[response.data.length-1]);
+        console.log(response.data[response.data.length-1])
+        setDay2(response.data[response.data.length-2]);
+        console.log(response.data[response.data.length-2])
+        setDay3(response.data[response.data.length-3]);
+        setDay4(response.data[response.data.length-4]);
+        setDay5(response.data[response.data.length-5]);
         setResultSearch(response.data[response.data.length-1]);
     }
 
@@ -145,40 +160,33 @@ function Dashboard() {
                             <span>{resultSearch.Status}</span>
                             </h4>
                             <h4>Data <br/>
-                            <span>{resultSearch.Date}</span>
+                            <span>{formatDate(resultSearch.Date)}</span>
                             </h4>
                         </ContainerResultSearch>
                         <ContainerChart>
-                        <Chart
-                            width={'600px'}
-                            height={'400px'}
-                            chartType="LineChart"
-                            loader={<div>Loading Chart</div>}
-                            data={[
-                                ['x', 'dogs'],
-                                [0, 0],
-                                [1, 10],
-                                [2, 23],
-                                [3, 17],
-                                [4, 18],
-                                [5, 9],
-                                [6, 11],
-                                [7, 27],
-                                [8, 33],
-                                [9, 40],
-                                [10, 32],
-                                [11, 35],
-                            ]}
-                            options={{
-                                hAxis: {
-                                title: 'Time',
-                                },
-                                vAxis: {
-                                title: 'Popularity',
-                                },
-                            }}
-                            rootProps={{ 'data-testid': '1' }}
-                            />
+                            <Chart
+                                width={'600px'}
+                                height={'400px'}
+                                chartType="LineChart"
+                                loader={<div>Loading Chart</div>}
+                                data={[
+                                    ['x', 'Casos'],
+                                    ['há 5 dias', day5.Cases],
+                                    ['há 4 dias', day4.Cases],
+                                    ['há 3 dias', day3.Cases],
+                                    ['há 2 dias', day2.Cases],
+                                    ['há 1 dias', day1.Cases],
+                                ]}
+                                options={{
+                                    hAxis: {
+                                    title: 'Dias',
+                                    },
+                                    vAxis: {
+                                    title: 'Casos',
+                                    },
+                                }}
+                                rootProps={{ 'data-testid': '1' }}
+                                />
                         </ContainerChart>
                     </>
                 ) : (<></>)
