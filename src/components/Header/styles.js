@@ -10,7 +10,15 @@ export const Container = styled.div`
   top: 0;
   padding: 15px;
   background: var(--secondary);
-  color: var(--like)
+  color: var(--like);
+
+  > h2 {
+    > span{
+      font-size: 14px;
+      font-weight: 100;
+    }
+  }
+
 `;
 
 export const Button = styled.button`
