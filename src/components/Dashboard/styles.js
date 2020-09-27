@@ -8,6 +8,7 @@ export const Container = styled.div`
     height: 100%;
     max-height: 800px;
     padding: 20px;
+    padding-top: 30;
 `;
 
 export const Info = styled.div`
@@ -21,21 +22,57 @@ export const Info = styled.div`
         >span{
             font-size: 36px;
         }
-        img{
-            position: absolute;
-            width: 60px;
-            margin-left: 50px;
-            margin-top: -20px;
+    }
+    @media(max-width: 1060px){
+        >h4{
+            font-weight: 100;
+            font-size: 14px;
+                >span{
+                    font-size: 26px;
+                }
+        }
+    }
+    @media(max-width: 635px){
+        background: var(--secondary);
+        padding: 8px;
+        border-radius: 5px;
+        width: 300px;
+        margin-top:0;
+        margin-bottom:8px;
+        margin-left: auto;
+        margin-right: auto;
+        
+        >h4{
+            font-weight: 100;
+            font-size: 20px;
+                >span{
+                    font-size: 26px;
+                }
         }
     }
 `;
 
 export const ContainerInfos = styled.div`
     width: 100%;
+    height: 100%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     margin-bottom: 20px;
+
+    @media(max-width: 940px){
+        display: grid;
+        grid-template-columns: auto auto auto;
+        margin-top: 150px;
+    }
+    @media(max-width: 635px){
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-top: 60px;
+        padding-top: 60px;
+        overflow:scroll;
+    }
 `;
 
 export const ContainerSearch = styled.div`
@@ -82,6 +119,21 @@ export const ContainerResultSearch = styled.div`
             font-size: 24px;
         }
     }
+
+    @media(max-width: 660px){
+        display: block;
+        height: 100%;
+        margin-top: 40px;
+        margin-bottom: 20px;
+        > h4 {
+            font-weight: 100;
+            font-size: 18px;
+
+            >span{
+                font-size: 22px;
+            }
+        }
+    }
 `;
 
 export const ContainerChart = styled.div`
@@ -89,4 +141,8 @@ export const ContainerChart = styled.div`
     background: var(--white);
     display:flex;
     justify-content: center;
+
+    @media(max-width: 660px){
+        display: none;
+    }
 `;

@@ -48,6 +48,9 @@ function Dashboard() {
     const[day4, setDay4] = useState();
     const[day5, setDay5] = useState();
 
+    //searching
+    const[searching, setSearching] = useState();
+
     
     const[loaded, setLoaded] = useState();
 
@@ -71,16 +74,20 @@ function Dashboard() {
     },[]);
 
     async function HandleSearch(){
+
+        setSearching(true);
+
         const response = await 
             api.get(`dayone/country/${country}/status/confirmed`);
+
         setDay1(response.data[response.data.length-1]);
-        console.log(response.data[response.data.length-1])
         setDay2(response.data[response.data.length-2]);
-        console.log(response.data[response.data.length-2])
         setDay3(response.data[response.data.length-3]);
         setDay4(response.data[response.data.length-4]);
         setDay5(response.data[response.data.length-5]);
         setResultSearch(response.data[response.data.length-1]);
+
+        setSearching();
     }
 
     useEffect(()=>{
@@ -189,7 +196,7 @@ function Dashboard() {
                                 />
                         </ContainerChart>
                     </>
-                ) : (<></>)
+                ) : (searching ? (<LinearProgress/>) : (<></>))
             }
     </Container>
   );

@@ -33,6 +33,23 @@ export const Container = styled.div`
         margin-top: 30px;
     }
   }
+
+    @media(max-width: 720px){
+        > div{
+            > img {
+            width: 200px;
+            }
+        }
+    }
+    @media(max-width: 520px){
+        > div{
+            display: block;
+            > img {
+                display: none;
+            }
+        }
+    }
+
 `;
 
 export const LinkDoc = styled.a`

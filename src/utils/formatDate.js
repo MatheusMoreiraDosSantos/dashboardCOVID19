@@ -3,7 +3,7 @@
 
 export default function formatDate(date){
     if(date){
-        date = '2020-02-27T00:00:00Z';
+        // date = '2020-02-27T00:00:00Z';
         // let pattern = "dd 'de' MMMM 'de' yyyy";
         
         // let dateZone = zonedTimeToUtc(date, 'America/Sao_Paulo');

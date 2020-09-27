@@ -21,6 +21,14 @@ export const Container = styled.div`
     }
   }
 
+  @media(max-width: 700px){
+    background: var(--primary);
+    > h2 {
+      > span{
+        display:none;
+      }
+    }
+  }
 `;
 
 export const Button = styled(Link)`
@@ -40,4 +48,19 @@ export const Button = styled(Link)`
         opacity: 0.6;
     }
 
+    @media(max-width: 700px){
+        display:none;
+    }
+`;
+
+export const ButtonMobile = styled(Link)`
+  display: none;
+  @media(max-width: 700px){
+        display:flex;
+        
+        > svg {
+          fill: var(--white);
+          font-size: 20px;
+        }
+    }
 `;
